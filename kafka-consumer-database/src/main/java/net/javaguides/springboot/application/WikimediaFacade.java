@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class WikimediaFacade {
-    private final WikimediaService wikimediaService;
+    private final WikimediaCommandUseCase wikimediaService;
 
     @KafkaListener(topics = "wikimedia_recentchange", groupId = "myGroup")
     public void consume(String eventMessage) {
